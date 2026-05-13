@@ -1,8 +1,0 @@
----
-title: "Positron Tutorials"
----
-
-# Positron Tutorials
-
-* [First data analysis with R in a Quarto document](r.qmd)
-* [First data analysis with Python in a Jupyter notebook](python.qmd)
