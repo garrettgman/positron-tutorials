@@ -248,6 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We recommend running the following command to install the packages:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas plotnine</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>uv add</code> will install the package and also add it to your <code>pyproject.toml</code> file so that you can easily keep track of the packages you have installed in your environment.</p>
+<p>This is what it looks like to set up a new Python project in Positron:</p>
 <script src="https://fast.wistia.com/player.js" async=""></script>
 <script src="https://fast.wistia.com/embed/56anfwwqco.js" async="" type="module"></script>
 <style>wistia-player[media-id='56anfwwqco']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/56anfwwqco/swatch'); display: block; filter: blur(5px); padding-top:62.71%; }</style>
@@ -289,12 +290,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>You can use the Variables pane to explore the columns in the dataset. Or you can click the grid-like icon to open the dataset in the Positron Data Explorer.</p>
 <p>The Data Explorer allows you to sort and filter the data, as well as view summary statistics. If you would like to recreate a filter, you can click the “&lt;/&gt; Convert to Code” button to copy the code for that filter to your clipboard. You can then paste that code into a cell in your notebook to run it.</p>
+<p>We will use the following code to filter <code>mpg</code> to only rows where year is 2008:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mpg_2008 <span class="op">=</span> mpg[mpg[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2008</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The video below shows how to use the Data Explorer to filter the data and copy the code for that filter to a notebook cell.</p>
 <script src="https://fast.wistia.com/player.js" async=""></script>
 <script src="https://fast.wistia.com/embed/cavosguj3g.js" async="" type="module"></script>
 <style>wistia-player[media-id='cavosguj3g']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/cavosguj3g/swatch'); display: block; filter: blur(5px); padding-top:62.71%; }</style>
 <p><wistia-player media-id="cavosguj3g" aspect="1.5946843853820598"></wistia-player></p>
-<p>We will use the following code to filter <code>mpg</code> to only rows where year is 2008:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mpg_2008 <span class="op">=</span> mpg[mpg[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2008</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Next we will visualize the relationship between the engine displacement (<code>displ</code>) and the miles per gallon (<code>mpg</code>) for cars from 2008 using <code>plotnine</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -310,11 +312,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> .reset_index()</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> .sort_values(by<span class="op">=</span><span class="st">'hwy'</span>, ascending<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Finally, we will place a Markdown cell with a title at the top of the notebook. To do this, hover over the area where you would like to insert the new cell and click the “+ Markdown” button that appears.</p>
+<p>Watch the video below to see these steps in action:</p>
 <script src="https://fast.wistia.com/player.js" async=""></script>
 <script src="https://fast.wistia.com/embed/zkmmmdw026.js" async="" type="module"></script>
 <style>wistia-player[media-id='zkmmmdw026']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/zkmmmdw026/swatch'); display: block; filter: blur(5px); padding-top:62.71%; }</style>
 <p><wistia-player media-id="zkmmmdw026" aspect="1.5946843853820598"></wistia-player></p>
 <p>To test that the notebook works when we run all of the cells in order, click the “Clear Outputs” button in the toolbar to clear all of the outputs from the cells. Next, click the Restart Kernel arrow to create a fresh session in which to run the cells. Then click the “Run All” button to run all of the cells in order. You should see the plot and the table appear as outputs from the cells.</p>
+<p>The entire process looks liek this:</p>
 <script src="https://fast.wistia.com/player.js" async=""></script>
 <script src="https://fast.wistia.com/embed/541018pjrj.js" async="" type="module"></script>
 <style>wistia-player[media-id='541018pjrj']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/541018pjrj/swatch'); display: block; filter: blur(5px); padding-top:62.71%; }</style>
