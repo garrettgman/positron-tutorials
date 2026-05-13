@@ -120,7 +120,7 @@ starwars_humans <- starwars |>
   filter(species == "Human")
 ```
 
-<!--Add Wistia video: Making variable using Data explorer-->
+<script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/slcoszmj6l.js" async type="module"></script><style>wistia-player[media-id='slcoszmj6l']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/slcoszmj6l/swatch'); display: block; filter: blur(5px); padding-top:62.71%; }</style> <wistia-player media-id="slcoszmj6l" aspect="1.5946843853820598"></wistia-player>
 
 Next we will visualize the relationship between height and mass for human Star Wars characters using `ggplot2`:
 
@@ -148,9 +148,9 @@ starwars_humans |>
   arrange(desc(avg_height))
 ```
 
-We can also write text in markdown between our code cells. For example, we can explain our work or add section headers. This would also be a good time to change the title of our document.
+We can also write text in markdown between our code cells. For example, we can explain our work or add section headers. This would also be a good time to change the title of your document, if you have not already.
 
-<!--Add Wistia video: Make new cells-->
+<script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/4vv88ac02n.js" async type="module"></script><style>wistia-player[media-id='4vv88ac02n']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/4vv88ac02n/swatch'); display: block; filter: blur(5px); padding-top:62.71%; }</style> <wistia-player media-id="4vv88ac02n" aspect="1.5946843853820598"></wistia-player>
 
 ## Save your document
 
@@ -174,7 +174,7 @@ The new HTML file is saved in the project folder beside your `.qmd` file. You ca
 Turn on **Render on Save** (in Settings or by adding `editor: render-on-save: true` to the YAML header) and your report will refresh every time you save the file.
 :::
 
-<!--Add Wistia video: Render document-->
+<script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/vpzc1n2uhp.js" async type="module"></script><style>wistia-player[media-id='vpzc1n2uhp']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/vpzc1n2uhp/swatch'); display: block; filter: blur(5px); padding-top:62.71%; }</style> <wistia-player media-id="vpzc1n2uhp" aspect="1.5946843853820598"></wistia-player>
 
 ## Conclusion
 
