@@ -3,3 +3,5 @@ Two simple tutorials to introduce data scientists to Positron. The tutorials are
 
 * First data analysis with Python in a Jupyter notebook (python.qmd)
 * First data analysis with R in a Quarto document (r.qmd)
+
+Preview the tutorials at <https://garrettgman.github.io/positron-tutorials/>.
