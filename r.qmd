@@ -15,7 +15,7 @@ This quick tutorial will show you how to use Quarto documents within Positron. W
 
 Positron is a free and source available code editor for data scientists. To install Positron on your computer, visit [positron.posit.co](http://positron.posit.co) and click the "Download" button.
 
-![]("images/download-button.png")
+![](images/download-button.png)
 
 Follow the instructions to install Positron.
 
@@ -32,15 +32,15 @@ Here's how:
 
 3. Pick **R Project** from the template list
 
-!["R Project template option in the New Folder from Template dialog"](images/r-project-template.png)
+!["R Project template option in the New Folder from Template dialog"](images/r-project-template.png){width="50%"}
 
 4. Select a location for your project folder and give it a name. Then click Next.
 
-!["Create Python Project dialog"](images/create-r-project.png)
+!["Create Python Project dialog"](images/create-r-project.png){width="50%"}
 
 On the next screen, select a version of R to use from those available on your computer. Then click Create. Positron will scaffold the folder for you and launch an R console session automatically.
 
-!["Create R Environment dialog"](images/create-r-environment.png)
+!["Create R Environment dialog"](images/create-r-environment.png){width="50%"}
 
 ## Install packages
 

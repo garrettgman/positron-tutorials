@@ -15,7 +15,7 @@ This quick tutorial will show you how to use Jupyter Notebooks within Positron. 
 
 Positron is a free and source available code editor for data scientists. To install Positron on your computer, visit [positron.posit.co](http://positron.posit.co) and click the "Download" button. 
 
-![]("images/download-button.png")
+![](images/download-button.png)
 
 Follow the instructions to install Positron.
 
@@ -32,11 +32,11 @@ To create a project folder with its own virtual environment in Positron, follow 
 
 3. Choose Python Project from the list of templates
 
-!["Python Project template option in the New Folder from Template dialog"](images/python-project-template.png)
+!["Python Project template option in the New Folder from Template dialog"](images/python-project-template.png){width="50%"}
 
 4. Select a location for your project folder and give it a name. Then check Create a pyproject.toml file. This file will keep track of the packages you install in your virtual environment. Then click Next.
 
-!["Create Python Project dialog"](images/create-python-project.png)
+!["Create Python Project dialog"](images/create-python-project.png){width="50%"}
 
 The next screen will help you set up your Python environment. 
 
@@ -48,7 +48,7 @@ The next screen will help you set up your Python environment.
 
 4. Select a Python version to use for your environment. We recommend using the latest stable version of Python.
 
-!["Create Python Environment dialog"](images/create-python-environment.png)
+!["Create Python Environment dialog"](images/create-python-environment.png){width="50%"}
 
 Once you have made your selections, click Create. Positron will create the project folder and set up the virtual environment for you.
 
