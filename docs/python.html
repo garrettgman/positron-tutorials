@@ -258,12 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We recommend running the following command to install the packages:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas plotnine</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>uv add</code> will install the package and also add it to your <code>pyproject.toml</code> file so that you can easily keep track of the packages you have installed in your environment.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/uv-add-plotnine.png" class="img-fluid figure-img"></p>
-<figcaption>“Terminal with uv add plotnine command”</figcaption>
-</figure>
-</div>
+<!--Add Wistia video: how to install packages-->
 </section>
 <section id="open-a-jupyter-notebook" class="level2">
 <h2 class="anchored" data-anchor-id="open-a-jupyter-notebook">Open a Jupyter Notebook</h2>
@@ -291,8 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now that we have our Jupyter Notebook open, we can start exploring some data. For this tutorial, we will use the <code>mpg</code> dataset, which is a built-in dataset in the <code>plotnine</code> package. To load the dataset:</p>
 <p>Hover over the area where you would like to insert a new cell and click the “+ Code” button that appears.</p>
 <p>Then paste the following code into the cell and click the Run button:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine.data <span class="im">import</span> mpg  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine.data <span class="im">import</span> mpg  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This will load the <code>mpg</code> dataset into your notebook’s kernel. Notice that the Variables pane to the right of the notebook now shows a new variable called <code>mpg</code>. This variable contains the dataset we just loaded.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -302,40 +296,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>You can use the Variables pane to explore the columns in the dataset. Or you can click the grid-like icon to open the dataset in the Positron Data Explorer.</p>
 <p>The Data Explorer allows you to sort and filter the data, as well as view summary statistics. If you would like to recreate a filter, you can click the “&lt;/&gt; Convert to Code” button to copy the code for that filter to your clipboard. You can then paste that code into a cell in your notebook to run it.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><video src="images/data-viewer-copy-as-code.mp4" class="img-fluid" controls=""><a href="images/data-viewer-copy-as-code.mp4">Video</a></video></p>
-<figcaption>“Data Explorer with Copy as code button highlighted”</figcaption>
-</figure>
-</div>
-<p>We will use the following code to filter <code>mpg</code> to only include cars with an automatic transmission:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mpg_auto <span class="op">=</span> mpg[mpg[<span class="st">'trans'</span>].<span class="bu">str</span>.startswith(<span class="st">'auto'</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Next we will visualize the relationship between the engine displacement (<code>displ</code>) and the miles per gallon (<code>mpg</code>) for cars with automatic transmissions using <code>plotnine</code>:</p>
+<!--Add Wistia video: Making variable using Data explorer-->
+<p>We will use the following code to filter <code>mpg</code> to only rows where year is 2008:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mpg_2008 <span class="op">=</span> mpg[mpg[<span class="st">'year'</span>] <span class="op">==</span> <span class="dv">2008</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Next we will visualize the relationship between the engine displacement (<code>displ</code>) and the miles per gallon (<code>mpg</code>) for cars from 2008 using <code>plotnine</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mpg_auto, aes(x<span class="op">=</span><span class="st">'displ'</span>, y<span class="op">=</span><span class="st">'hwy'</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mpg_2008, aes(x<span class="op">=</span><span class="st">'displ'</span>, y<span class="op">=</span><span class="st">'hwy'</span>))</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a> <span class="op">+</span> geom_jitter(aes(color<span class="op">=</span><span class="st">'class'</span>))</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a> <span class="op">+</span> geom_smooth(method<span class="op">=</span><span class="st">'lm'</span>, se<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> labs(title<span class="op">=</span><span class="st">'MPG: Displacement vs Highway Mileage'</span>,</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'Displacement (liters)'</span>,</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span><span class="st">'Highway Mileage (mpg)'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Finally, we add a code cell that returns a formatted table of the average highway mileage for each class of car:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(mpg_auto.groupby(<span class="st">'class'</span>)[<span class="st">'hwy'</span>]</span>
+<p>We will also add a code cell that returns a formatted table of the average highway mileage for each class of car:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(mpg_2008.groupby(<span class="st">'class'</span>)[<span class="st">'hwy'</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> .mean()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> .reset_index()</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> .sort_values(by<span class="op">=</span><span class="st">'hwy'</span>, ascending<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>And place a Markdown cell with a title at the top of the notebook. To do this, hover over the area where you would like to insert the new cell and click the “+ Markdown” button that appears.</p>
-<p>To test that the notebook works when we run all of the cells in order, click the “Clear Outputs” button in the toolbar to clear all of the outputs from the cells. Then click the “Run All” button to run all of the cells in order. You should see the plot and the table appear as outputs from the cells.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><video src="images/exploring-mpg-notebook.mp4" class="img-fluid" controls=""><a href="images/exploring-mpg-notebook.mp4">Video</a></video></p>
-<figcaption>“Exploring the mpg dataset in a Jupyter Notebook in Positron”</figcaption>
-</figure>
-</div>
+<!--Add Wistia video: running cells-->
+<p>Finally, we will place a Markdown cell with a title at the top of the notebook. To do this, hover over the area where you would like to insert the new cell and click the “+ Markdown” button that appears.</p>
+<p>To test that the notebook works when we run all of the cells in order, click the “Clear Outputs” button in the toolbar to clear all of the outputs from the cells. Next, click the Restart Kernel arrow to create a fresh session in which to run the cells. Then click the “Run All” button to run all of the cells in order. You should see the plot and the table appear as outputs from the cells.</p>
+<!--Add Wistia video: Add markdown title, clear output, run all-->
 </section>
 <section id="save-your-notebook" class="level2">
 <h2 class="anchored" data-anchor-id="save-your-notebook">Save your notebook</h2>
-<p>To save your notebook, click the Save button in the toolbar or use the keyboard shortcut Ctrl+S (Cmd+S on Mac). This will save your notebook to your project folder, where it will appear in the File Explorer in the left sidebar.</p>
+<p>To save your notebook, use the keyboard shortcut Ctrl+S (Cmd+S on Mac). This will save your notebook to your project folder, where it will appear in the File Explorer in the left sidebar.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/save-notebook.png" class="img-fluid figure-img"></p>
